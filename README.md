@@ -1,2 +1,2 @@
 # toucans-team-12
-Add-project-description-here | Chingu Voyage-6 | https://chingu.io/
+Momentum clone | Chingu Voyage-6 | https://chingu.io/
