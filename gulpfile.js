@@ -8,10 +8,6 @@ gulp.task('html', function() {
   console.log("html task");
 })
 
-gulp.task('css', function() {
-  console.log("css task");
-})
-
 gulp.task('sass', function(){
   return gulp.src('./assets/css/**/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -23,8 +19,8 @@ gulp.task('watch', function(){
   watch('index.html', function(){
     gulp.start('html');
   })
+  //watch all scss files and recompile to main.css
   watch('assets/css/**/*.scss', function(){
     gulp.start('sass');
   });
-
 });
