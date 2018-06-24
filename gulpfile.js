@@ -18,7 +18,7 @@ gulp.task('css', function() {
 gulp.task('sass', function(){
   console.log("acctual sass task");
   return gulp.src('./assets/css/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass())
     .pipe(gulp.dest('./css'));
 })
 
