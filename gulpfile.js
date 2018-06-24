@@ -2,11 +2,8 @@
 var gulp = require('gulp'),
 watch    = require('gulp-watch'),
 sass     = require('gulp-sass'),
-debug    = require('gulp-debug');
-
-gulp.task('html', function() {
-  console.log("html task");
-})
+debug    = require('gulp-debug'),
+browserSync = require('browser-sync').create();
 
 gulp.task('sass', function(){
   return gulp.src('./assets/css/**/*.scss')
@@ -15,12 +12,24 @@ gulp.task('sass', function(){
 });
 
 gulp.task('watch', function(){
+
+  browserSync.init({
+    server: {
+      baseDir: './'    
+    }
+  })
+
   //watch index html file and triger html task
   watch('index.html', function(){
-    gulp.start('html');
+    browserSync.reload();
   })
   //watch all scss files and recompile to main.css
   watch('assets/css/**/*.scss', function(){
-    gulp.start('sass');
+    gulp.start('cssInject');
   });
+});
+
+gulp.task('cssInject', ['sass'],function(){
+  return gulp.src('./assets/css/main.css').
+    pipe(browserSync.stream());
 });
