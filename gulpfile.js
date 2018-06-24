@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
 watch    = require('gulp-watch'),
 sass     = require('gulp-sass'),
-debug     = require('gulp-debug');
+debug    = require('gulp-debug');
 
 gulp.task('html', function() {
   console.log("html task");
@@ -14,7 +14,8 @@ gulp.task('css', function() {
 gulp.task('sass', function(){
   console.log("acctual sass task");
   return gulp.src('./assets/css/**/*.scss')
-    .pipe(sass())
+    .pipe(debug())
+    .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./css'));
 })
 
