@@ -1,11 +1,7 @@
 var gulp = require('gulp'),
 watch    = require('gulp-watch'),
-sass     = require('gulp-sass');
-
-gulp.task('default', function() {
-  // place code for your default task here
-  console.log("gulp runningas");
-});
+sass     = require('gulp-sass'),
+debug     = require('gulp-debug');
 
 gulp.task('html', function() {
   console.log("html task");
