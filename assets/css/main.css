@@ -1,24 +1,5 @@
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Fira Sans"), local("FiraSans-Regular"), url(http://fonts.gstatic.com/s/firasans/v5/EjsrzDkQUQCDwsBtLpcVQZBw1xU1rKptJj_0jans920.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
-
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Fira Sans Bold"), local("FiraSans-Bold"), url(http://fonts.gstatic.com/s/firasans/v5/DugPdSljmOTocZOR2CItOhampu5_7CjHW5spxoeN3Vs.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
-
-@font-face {
-  font-family: 'Fira Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Fira Mono"), local("FiraMono"), url(http://fonts.gstatic.com/s/firamono/v3/SlRWfq1zeqXiYWAN-lnG-pBw1xU1rKptJj_0jans920.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
-
+@import url(//fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(//fonts.googleapis.com/css?family=Roboto);
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -318,14 +299,294 @@ template {
 [hidden] {
   display: none; }
 
+html, body, main {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
 body {
-  background-color: white;
   font-size: 14px;
   line-height: 1.6;
-  font-family: 'Fira Sans', sans-serif;
-  color: #666;
+  font-family: 'Roboto Slab', 'Roboto', sans-serif;
+  color: #ffffff;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility; }
 
-h1 {
-  color: tomato; }
+main {
+  margin-left: auto;
+  margin-right: auto; }
+
+/* 
+
+sass file for the home page elements, Classes and IDs which includes;
+.bg-image, .inner-header, .overlay, .logo, .quote, .the-quote, .quote-person, .container, .box1, .box2,
+.weather, .time, .greetings, .instruction, .greetings-task, .task-bar, .input-container,
+.btn, input[type=text], .footer, .settings, .icon, .credit, .credit-bg, .todo, .todo-bg
+
+*/
+.bg-image {
+  background: url("https://source.unsplash.com/category/nature/1920x1080") no-repeat;
+  background-size: cover;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  background-attachment: fixed;
+  background-position: center center; }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background: #000000; }
+
+@media screen and (min-width: 1024px) {
+  .inner-header {
+    margin-top: -2%; } }
+
+.logo {
+  float: left;
+  position: relative;
+  margin-left: -4%;
+  width: 20%;
+  height: 20%; }
+  @media screen and (min-width: 768px) {
+    .logo {
+      margin-top: 2%;
+      margin-left: -2%;
+      width: 13%;
+      height: 13%; } }
+  @media screen and (min-width: 1024px) {
+    .logo {
+      margin-top: 2%;
+      margin-left: -2%;
+      width: 10%;
+      height: 10%; } }
+
+.quote {
+  margin-top: 3%;
+  margin-right: 5%;
+  float: right;
+  width: 40%;
+  text-align: center;
+  background-color: #000000;
+  padding: 10px;
+  opacity: 0.4; }
+  @media screen and (min-width: 768px) {
+    .quote {
+      margin-top: 4%;
+      margin-right: 3%;
+      padding: 20px;
+      width: 20%; } }
+  @media screen and (min-width: 1024px) {
+    .quote {
+      margin-top: 5%;
+      margin-right: 2%;
+      padding: 20px;
+      width: 10%; } }
+
+.the-quote {
+  position: relative;
+  font-size: 10px;
+  line-height: 1.5em; }
+
+.quote-person {
+  font-size: 12px; }
+  @media screen and (min-width: 768px) {
+    .quote-person {
+      font-size: 14px; } }
+  @media screen and (min-width: 1024px) {
+    .quote-person {
+      font-size: 14px; } }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
+
+.box1 {
+  width: 100%;
+  margin-top: 3%; }
+  @media screen and (min-width: 768px) {
+    .box1 {
+      width: 50%; } }
+  @media screen and (min-width: 1024px) {
+    .box1 {
+      width: 50%; } }
+
+.box2 {
+  width: 100%;
+  margin-top: 3%; }
+  @media screen and (min-width: 768px) {
+    .box2 {
+      width: 50%;
+      margin-top: 3%; } }
+  @media screen and (min-width: 1024px) {
+    .box2 {
+      width: 50%;
+      margin-top: 3%; } }
+
+#weather {
+  width: 30%;
+  background-color: #000000;
+  padding: 20px;
+  opacity: 0.4;
+  margin: 0 auto; }
+  @media screen and (min-width: 768px) {
+    #weather {
+      width: 25%;
+      height: 12vh;
+      margin-left: 40%; } }
+  @media screen and (min-width: 1024px) {
+    #weather {
+      width: 25%;
+      height: 10vh;
+      margin-left: 50%; } }
+
+.weather-img {
+  width: 100%; }
+  @media screen and (min-width: 768px) {
+    .weather-img {
+      width: 50%; } }
+  @media screen and (min-width: 1024px) {
+    .weather-img {
+      width: 50%; } }
+
+#time {
+  font-size: 40px;
+  text-align: center;
+  position: relative; }
+  @media screen and (min-width: 768px) {
+    #time {
+      font-size: 50px;
+      text-align: left;
+      margin-right: 40%; } }
+  @media screen and (min-width: 1024px) {
+    #time {
+      font-size: 70px;
+      text-align: left;
+      margin-right: 50%; } }
+
+.greetings {
+  font-size: 20px;
+  font-weight: lighter;
+  position: relative; }
+  @media screen and (min-width: 768px) {
+    .greetings {
+      font-size: 50px; } }
+  @media screen and (min-width: 1024px) {
+    .greetings {
+      font-size: 70px; } }
+
+.instruction {
+  font-size: 15px;
+  font-weight: lighter;
+  position: relative; }
+  @media screen and (min-width: 768px) {
+    .instruction {
+      font-size: 30px; } }
+  @media screen and (min-width: 1024px) {
+    .instruction {
+      font-size: 50px; } }
+
+.greetings-task {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center; }
+
+.task-bar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center; }
+
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px; }
+  @media screen and (min-width: 768px) {
+    .input-container {
+      width: 75%; } }
+  @media screen and (min-width: 1024px) {
+    .input-container {
+      width: 50%; } }
+
+.btn {
+  padding: 10px;
+  background-color: #000000;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center; }
+
+input[type=text] {
+  color: #ffffff;
+  outline: none;
+  border: 0px;
+  background-color: #000000;
+  opacity: 0.4;
+  width: 100%; }
+  @media screen and (min-width: 768px) {
+    input[type=text] {
+      margin: 0 auto; } }
+  @media screen and (min-width: 1024px) {
+    input[type=text] {
+      margin: 0 auto; } }
+
+.footer {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap; }
+
+.settings {
+  width: 33.3%; }
+
+.icon {
+  margin-left: 20px;
+  font-size: 50px; }
+  .icon:hover {
+    cursor: pointer; }
+
+.credit {
+  font-size: 17px;
+  width: 33.3%;
+  display: flex;
+  justify-content: center; }
+  .credit:hover {
+    cursor: pointer;
+    color: #c9c9c9; }
+
+.credit-bg {
+  padding: 10px;
+  background-color: #000000;
+  height: 50%;
+  text-align: center; }
+
+.todo {
+  width: 33.3%;
+  display: flex;
+  justify-content: flex-end; }
+
+.todo-bg {
+  height: 50%;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+  font-size: 17px;
+  background-color: #000000;
+  opacity: 0.4; }
+  .todo-bg:hover {
+    background-color: #000000;
+    opacity: 1;
+    cursor: pointer; }
