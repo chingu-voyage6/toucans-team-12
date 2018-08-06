@@ -344,11 +344,11 @@ sass file for the home page elements, Classes and IDs which includes;
   width: 100%;
   height: 100%;
   opacity: 0.5;
-  background: black; }
+  background: #000000; }
 
 @media screen and (min-width: 1024px) {
   .inner-header {
-    margin-top: -2%; } }
+    margin-top: -3%; } }
 
 .logo {
   float: left;
@@ -376,10 +376,12 @@ sass file for the home page elements, Classes and IDs which includes;
   width: 30%;
   height: 80px;
   overflow: auto;
+  position: relative;
   text-align: center;
-  background-color: black;
-  opacity:  0.5;
-  padding: 10px; }
+  background-color: rgb(0, 0, 0, 0.25);
+  padding: 10px;
+  /* opacity: 0.3; } */
+}
   @media screen and (min-width: 768px) {
     #quote {
       margin-top: 3%;
@@ -395,11 +397,7 @@ sass file for the home page elements, Classes and IDs which includes;
       width: 15%;
       height: 170px; } }
 
-.quote p {
-  position: relative; }
-
 .the-quote {
-  position: relative;
   font-size: 10px;
   line-height: 1.5em; }
   @media screen and (min-width: 768px) {
@@ -444,9 +442,9 @@ sass file for the home page elements, Classes and IDs which includes;
 
 #weather {
   width: 50%;
-  background-color: black;
+  background-color: rgb(0, 0, 0, 0.25);
   padding: 20px;
-  opacity: 0.5;
+  position: relative;
   margin: 0 auto; }
   @media screen and (min-width: 768px) {
     #weather {
@@ -465,6 +463,7 @@ sass file for the home page elements, Classes and IDs which includes;
   @media screen and (min-width: 1024px) {
     .weather-img {
       width: 30%; } }
+
 
 #time {
   font-size: 40px;
@@ -527,7 +526,7 @@ sass file for the home page elements, Classes and IDs which includes;
 
 .btn {
   padding: 10px;
-  background-color: black;
+  background-color: #000000;
   border: none;
   cursor: pointer;
   color: #ffffff;
@@ -538,8 +537,8 @@ input[type=text] {
   color: #ffffff;
   outline: none;
   border: 0px;
-  background-color: black;
-  opacity: 0.5;
+  background-color: #000000;
+  opacity: 0.3;
   width: 100%; }
   @media screen and (min-width: 768px) {
     input[type=text] {
@@ -579,13 +578,14 @@ input[type=text] {
 
 .credit-bg {
   padding: 10px;
-  background-color: black;
+  background-color: #000000;
   height: 50%;
   text-align: center; }
 
 .todo {
   width: 33.3%;
   display: flex;
+  position: relative;
   justify-content: flex-end; }
 
 .todo-bg {
@@ -594,9 +594,8 @@ input[type=text] {
   margin: 0;
   text-align: center;
   font-size: 17px;
-  background-color: black;
-  opacity: 0.5; }
+  background-color: rgb(0, 0, 0, 0.25); }
   .todo-bg:hover {
-    background-color: black;
+    background-color: #000000;
     opacity: 1;
     cursor: pointer; }
