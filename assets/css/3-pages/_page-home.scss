@@ -1,7 +1,7 @@
 /* 
 
 sass file for the home page elements, Classes and IDs which includes;
-.bg-image, .inner-header, .overlay, .logo, .quote, .the-quote, .quote-person, .container, .box1, .box2,
+.bg-image, .inner-header, .overlay, .logo, .quote, .the-quote, .author, .container, .box1, .box2,
 .weather, .time, .greetings, .instruction, .greetings-task, .task-bar, .input-container,
 .btn, input[type=text], .footer, .settings, .icon, .credit, .credit-bg, .todo, .todo-bg
 
@@ -63,11 +63,13 @@ sass file for the home page elements, Classes and IDs which includes;
 }
 
 
-.quote {
+#quote {
   margin-top: 3%;
   margin-right: 5%;
   float: right;
-  width: 40%;
+  width: 30%;
+  height: 80px;
+  overflow: auto;
   text-align: center;
   background-color: $background-color;
   padding: 10px;
@@ -75,10 +77,11 @@ sass file for the home page elements, Classes and IDs which includes;
 
     // quote media query for devices above (768px)
     @media screen and (min-width: $medium-device) {
-    margin-top: 4%;
+    margin-top: 3%;
     margin-right: 3%;
-    padding: 20px;
+    padding: 10px;
     width: 20%;
+    height: 190px;
   }
 
     // quote media query for devices above (1024px)
@@ -86,26 +89,34 @@ sass file for the home page elements, Classes and IDs which includes;
     margin-top: 5%;
     margin-right: 2%;
     padding: 20px;
-    width: 10%;
+    width: 15%;
+    height: 170px;
   }
+}
+
+.quote p {
+    position: relative;
 }
 
 .the-quote {
     position: relative;
     font-size: 10px;
     line-height: 1.5em;
+    @media screen and (min-width: $medium-device) {
+        font-size: 14px;
+    }
 }
 
-.quote-person {
+.author {
     font-size: 12px;
     // greetings media query for devices above (768px)
     @media screen and (min-width: $medium-device) {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     // greetings media query for devices above (1024px)
     @media screen and (min-width: $larger-device) {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
@@ -148,8 +159,7 @@ sass file for the home page elements, Classes and IDs which includes;
 }
 
 #weather {
-width: 30%;
-// height: 20vh;
+width: 50%;
 background-color: $background-color;
 padding: 20px;
 opacity: $background-transparency;
@@ -157,21 +167,19 @@ margin: 0 auto;
 
     // weather media query for devices above (768px)
     @media screen and (min-width: $medium-device) {
-        width: 25%;
-        height: 12vh;
+        width: 30%;
         margin-left: 40%;
     }
 
     // weather media query for devices above (1024px)
     @media screen and (min-width: $larger-device) {
-        width: 25%;
-        height: 10vh;
-        margin-left: 50%;
+        width: 30%;
+        margin-left: 60%;
     }
 }
 
 .weather-img {
-    width: 100%;
+    width: 40%;
 
     @media screen and (min-width: $medium-device) {
     width: 50%;
@@ -179,7 +187,7 @@ margin: 0 auto;
 
     // weather media query for devices above (1024px)
     @media screen and (min-width: $larger-device) {
-        width: 50%;
+        width: 30%;
     }
 }
 
@@ -197,7 +205,7 @@ position: relative;
 
     // time media query for devices above (1024px)
     @media screen and (min-width: $larger-device) {
-        font-size: 70px;
+        font-size: 75px;
         text-align: left;
         margin-right: 50%;
     }
@@ -296,7 +304,7 @@ width: 100%;
 
 .footer{
 padding: 0;
-margin: 0;
+margin-bottom: -5px;
 width: 100%;
 position: absolute;
 bottom: 0;
@@ -320,6 +328,8 @@ font-size: 50px;
 .credit{
 font-size: 17px;
 width: 33.3%;
+margin: 0;
+padding: 0;
 display: flex;
 justify-content: center;
     &:hover{
@@ -349,9 +359,9 @@ text-align: center;
 font-size: 17px;
 background-color: $background-color;
 opacity: $background-transparency;
-&:hover{
-background-color: $background-color;
-opacity: 1;
-cursor: pointer;
-}
+    &:hover{
+    background-color: $background-color;
+    opacity: 1;
+    cursor: pointer;
+    }
 }

@@ -1,3 +1,5 @@
+// API Implementation for displaying current weather
+
 if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(function(position){
         let long  = position.coords.longitude;
@@ -46,5 +48,79 @@ if(navigator.geolocation){
             .catch(error => console.error(error))      
     })
 } 
+
+// API Implementation for getting and displaying quotes
+
+
+let xhr = new XMLHttpRequest();
+xhr.responseType = "json"; // xhr.response will be parsed into a JSON object
+xhr.open('GET', "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1", true);
+xhr.send();
+
+xhr.onreadystatechange = processRequest;
+
+const theQuote = document.querySelector('.the-quote');
+const author = document.querySelector('.author');
+
+function processRequest(e) {
+
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        function stripHtmlTags(str) {
+            if ((str === null) || (str === ''))
+                return false;
+            else
+                str = str.toString();
+            return str.replace(/<[^>]*>/g, '');
+        }
+        
+        let quote = xhr.response[0].content;
+        quote = stripHtmlTags(quote);
+        theQuote.innerHTML = quote;
+        const authorName = xhr.response[0].title;
+        author.textContent = authorName;
+        console.log(quote + " " + authorName); // no parsing needed
+    }else{
+        console.log(`There's an error with this response code ${xhr.status} `);
+    }
+}
+
+
+
+// This Function Displays time
+
+const timeDiv = document.querySelector('#time');
+const greetings = document.querySelector('.greetings');
+
+function startTime() {
+    let today = new Date();
+    let hours = today.getHours();
+    let minutes = today.getMinutes();
+    // let seconds = today.getSeconds();
+    minutes = checkTime(minutes);
+    // seconds = checkTime(seconds);
+    let format = "AM";
+    let partOfTheDay = "Good Morning Champ";
+    if (hours >= 12) {
+        format = "PM";
+        partOfTheDay = "Good Afternoon Champ";
+        hours = hours - 12;
+    }
+    if (hours == 0) {
+        hours = 12;
+    }
+    timeDiv.innerHTML =
+        `${hours} : ${minutes} ${format}`;
+    greetings.textContent = partOfTheDay;
+
+    setTimeout(startTime, 500);
+}
+
+function checkTime(i) {
+    if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+    return i;
+}
+
+
+startTime();
 
 

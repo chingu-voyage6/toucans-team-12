@@ -321,7 +321,7 @@ main {
 /* 
 
 sass file for the home page elements, Classes and IDs which includes;
-.bg-image, .inner-header, .overlay, .logo, .quote, .the-quote, .quote-person, .container, .box1, .box2,
+.bg-image, .inner-header, .overlay, .logo, .quote, .the-quote, .author, .container, .box1, .box2,
 .weather, .time, .greetings, .instruction, .greetings-task, .task-bar, .input-container,
 .btn, input[type=text], .footer, .settings, .icon, .credit, .credit-bg, .todo, .todo-bg
 
@@ -343,8 +343,8 @@ sass file for the home page elements, Classes and IDs which includes;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.4;
-  background: #000000; }
+  opacity: 0.5;
+  background: black; }
 
 @media screen and (min-width: 1024px) {
   .inner-header {
@@ -369,41 +369,51 @@ sass file for the home page elements, Classes and IDs which includes;
       width: 10%;
       height: 10%; } }
 
-.quote {
+#quote {
   margin-top: 3%;
   margin-right: 5%;
   float: right;
-  width: 40%;
+  width: 30%;
+  height: 80px;
+  overflow: auto;
   text-align: center;
-  background-color: #000000;
-  padding: 10px;
-  opacity: 0.4; }
+  background-color: black;
+  opacity:  0.5;
+  padding: 10px; }
   @media screen and (min-width: 768px) {
-    .quote {
-      margin-top: 4%;
+    #quote {
+      margin-top: 3%;
       margin-right: 3%;
-      padding: 20px;
-      width: 20%; } }
+      padding: 10px;
+      width: 20%;
+      height: 190px; } }
   @media screen and (min-width: 1024px) {
-    .quote {
+    #quote {
       margin-top: 5%;
       margin-right: 2%;
       padding: 20px;
-      width: 10%; } }
+      width: 15%;
+      height: 170px; } }
+
+.quote p {
+  position: relative; }
 
 .the-quote {
   position: relative;
   font-size: 10px;
   line-height: 1.5em; }
+  @media screen and (min-width: 768px) {
+    .the-quote {
+      font-size: 14px; } }
 
-.quote-person {
+.author {
   font-size: 12px; }
   @media screen and (min-width: 768px) {
-    .quote-person {
-      font-size: 14px; } }
+    .author {
+      font-size: 16px; } }
   @media screen and (min-width: 1024px) {
-    .quote-person {
-      font-size: 14px; } }
+    .author {
+      font-size: 16px; } }
 
 .container {
   display: flex;
@@ -433,30 +443,28 @@ sass file for the home page elements, Classes and IDs which includes;
       margin-top: 3%; } }
 
 #weather {
-  width: 30%;
-  background-color: #000000;
+  width: 50%;
+  background-color: black;
   padding: 20px;
-  opacity: 0.4;
+  opacity: 0.5;
   margin: 0 auto; }
   @media screen and (min-width: 768px) {
     #weather {
-      width: 25%;
-      height: 12vh;
+      width: 30%;
       margin-left: 40%; } }
   @media screen and (min-width: 1024px) {
     #weather {
-      width: 25%;
-      height: 10vh;
-      margin-left: 50%; } }
+      width: 30%;
+      margin-left: 60%; } }
 
 .weather-img {
-  width: 100%; }
+  width: 40%; }
   @media screen and (min-width: 768px) {
     .weather-img {
       width: 50%; } }
   @media screen and (min-width: 1024px) {
     .weather-img {
-      width: 50%; } }
+      width: 30%; } }
 
 #time {
   font-size: 40px;
@@ -469,7 +477,7 @@ sass file for the home page elements, Classes and IDs which includes;
       margin-right: 40%; } }
   @media screen and (min-width: 1024px) {
     #time {
-      font-size: 70px;
+      font-size: 75px;
       text-align: left;
       margin-right: 50%; } }
 
@@ -519,7 +527,7 @@ sass file for the home page elements, Classes and IDs which includes;
 
 .btn {
   padding: 10px;
-  background-color: #000000;
+  background-color: black;
   border: none;
   cursor: pointer;
   color: #ffffff;
@@ -530,8 +538,8 @@ input[type=text] {
   color: #ffffff;
   outline: none;
   border: 0px;
-  background-color: #000000;
-  opacity: 0.4;
+  background-color: black;
+  opacity: 0.5;
   width: 100%; }
   @media screen and (min-width: 768px) {
     input[type=text] {
@@ -542,7 +550,7 @@ input[type=text] {
 
 .footer {
   padding: 0;
-  margin: 0;
+  margin-bottom: -5px;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -561,6 +569,8 @@ input[type=text] {
 .credit {
   font-size: 17px;
   width: 33.3%;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center; }
   .credit:hover {
@@ -569,7 +579,7 @@ input[type=text] {
 
 .credit-bg {
   padding: 10px;
-  background-color: #000000;
+  background-color: black;
   height: 50%;
   text-align: center; }
 
@@ -584,9 +594,9 @@ input[type=text] {
   margin: 0;
   text-align: center;
   font-size: 17px;
-  background-color: #000000;
-  opacity: 0.4; }
+  background-color: black;
+  opacity: 0.5; }
   .todo-bg:hover {
-    background-color: #000000;
+    background-color: black;
     opacity: 1;
     cursor: pointer; }
