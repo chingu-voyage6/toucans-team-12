@@ -359,3 +359,26 @@ background-color: $background-transparent-color;
     cursor: pointer;
     }
 }
+#weather_popup{
+    /* display: none;  */
+   width: 500px;
+   background: $background-transparent-color;
+   margin-top: 20px;
+   color: #fff;
+   padding: 1em; 
+}
+.weather_wrapper::before{
+   right: -80%;
+   top: -21px;
+   border-bottom: 5px solid #fff;
+   height: 0;
+   width: 0;
+   position: relative;
+   display: block;
+   border-left: 7px solid transparent;
+   border-right: 7px solid transparent;
+   content: '';
+   opacity: 1;
+}
+.f-10{font-size: 10px;}
+.dis-none{ display:none; }
